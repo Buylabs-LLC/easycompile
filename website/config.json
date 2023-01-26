@@ -1,7 +1,7 @@
 {
     "siteInformation": {
-        "processPort": 3001,
-        "domain": "http://localhost:3001",
-        "fileExtension": ".easycompile"
+        "processPort": 801,
+        "domain": "https://que2z0-3001.preview.csb.app",
+        "fileExtension": ".sharf"
     }
 }

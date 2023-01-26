@@ -23,10 +23,11 @@ app.post('/sendform', async function (req, res) {
     const content = req.body.content;
     const time = Date.now();
     const fileName = req.body.name;
-    fs.writeFileSync(`./files/${time}.temp`, content);
+    fs.writeFileSync(`./files/${fileName}.temp`, content);
     bytenode.compileFile({
-        filename: `./files/${time}.temp`,
+        filename: `./files/${fileName}.temp`,
         output: `./files/${fileName}${config.siteInformation.fileExtension.replaceAll(".", "")}`,
+  compileAsModule: false
     });
     res.download(`./files/${fileName}${config.siteInformation.fileExtension.replaceAll(".", "")}`);
     fs.writeFileSync(`./backups/${fileName}-${time}.js`, content);
